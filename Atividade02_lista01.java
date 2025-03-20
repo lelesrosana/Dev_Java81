@@ -7,7 +7,7 @@ public class Atividade02_lista01 {
 
 		Scanner read = new Scanner(System.in);
 	
-		System.out.println("O rpograma lê um número inteiro e indica se é par ou impar e inteiro ou negativo. ");
+		System.out.println("O programa lê um número inteiro e indica se é par ou impar e inteiro ou negativo. ");
 	
 		System.out.println("Informe um valor: ");
 		int numberInt = read.nextInt();
