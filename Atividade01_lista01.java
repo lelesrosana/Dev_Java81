@@ -7,7 +7,7 @@ public class Atividade01_lista01 {
 		
 		Scanner read = new Scanner(System.in);
 		
-		System.out.println("O programa soma A + B e comapara se o resultado maior do que C. ");
+		System.out.println("O programa soma A + B e compara se o resultado maior do que C. ");
 		
 		System.out.println("Informe o valor de A: ");
 		int valueA = read.nextInt();
