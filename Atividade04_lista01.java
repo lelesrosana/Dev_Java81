@@ -10,7 +10,7 @@ public class Atividade04_lista01 {
 		Scanner read = new Scanner(System.in);
 		
 		
-		System.out.println("O prorama analisa as características dos animais.");
+		System.out.println("O programa analisa as características dos animais.");
 		
 		System.out.println("Escolha uma opção:  vertebrado ou invertebrado ");
 		characteristic01 = read.nextLine();
@@ -23,7 +23,7 @@ public class Atividade04_lista01 {
 				System.out.println("Escolha uma opção: carnivoro ou onivoro ");
 				characteristic03 = read.nextLine();
 				if(characteristic03.equals("carnivoro")) {
-					System.out.println("O animal escolhido é uma Agua.");
+					System.out.println("O animal escolhido é uma águia.");
 				}else {
 					System.out.println("O animal escolhido é uma pomba.");
 				}
