@@ -9,7 +9,7 @@ public class Atividade03_lista01 {
 		
 		System.out.println("Programa para doador de sangue!");
 		
-		System.out.println("Infomre o nome completo do doador: ");
+		System.out.println("Informe o nome completo do doador: ");
 		String fullName = read.nextLine();
 		
 		System.out.println("Informe idade: ");
