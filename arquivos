@@ -1,0 +1,169 @@
+[1mdiff --git a/Modulo11/Atividade01.java b/Modulo11/Atividade01.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e66ecdd[m
+[1m--- /dev/null[m
+[1m+++ b/Modulo11/Atividade01.java[m
+[36m@@ -0,0 +1,58 @@[m
+[32m+[m[32mpackage Modulo11;[m
+[32m+[m
+[32m+[m[32mimport java.util.Scanner;[m
+[32m+[m[32mimport java.util.Queue;[m
+[32m+[m[32mimport java.util.LinkedList;[m
+[32m+[m
+[32m+[m[32mpublic class Atividade01 {[m
+[32m+[m
+[32m+[m	[32mpublic static void Limpatela() {[m
+[32m+[m		[32mfor (int i = 0; i < 50; i++)[m
+[32m+[m			[32mSystem.out.println();[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32mpublic static void main(String[] args) {[m
+[32m+[m
+[32m+[m		[32mScanner read = new Scanner(System.in);[m
+[32m+[m		[32mQueue<String> fila = new LinkedList<String>();[m
+[32m+[m		[32mboolean continueQuest = true;[m
+[32m+[m
+[32m+[m		[32mLimpatela();[m
+[32m+[m		[32mSystem.out.println("********************************************************");[m
+[32m+[m		[32mSystem.out.println("\n1 Para distribuir uma senha " + "\n2 Para ver a fila" + "\n3 Para chamar a próxima senha"[m
+[32m+[m				[32m+ "\n0 Para finalizar\n");[m
+[32m+[m		[32mSystem.out.println("********************************************************");[m
+[32m+[m
+[32m+[m		[32mwhile (continueQuest == true) {[m
+[32m+[m			[32mSystem.out.println("\nEscolha uma opção: ");[m
+[32m+[m			[32mint option = read.nextInt();[m
+[32m+[m			[32mread.nextLine(); // le a quebra e linha para evitar erro no Scanner read ( InputMismatchException[m
+[32m+[m								[32m// )[m
+[32m+[m
+[32m+[m			[32mLimpatela();[m
+[32m+[m			[32mif (option == 1) {[m
+[32m+[m				[32mSystem.out.println("\nInforme seu nome: ");[m
+[32m+[m				[32mString customerName = read.nextLine();[m
+[32m+[m				[32mfila.add(customerName);[m
+[32m+[m				[32mLimpatela();[m
+[32m+[m			[32m} else if (option == 2) {[m
+[32m+[m				[32mSystem.out.println("\nFila de espera: " + fila);[m
+[32m+[m			[32m} else if (option == 3) {[m
+[32m+[m				[32mif (fila != null) {[m
+[32m+[m					[32mString service = fila.poll();[m
+[32m+[m					[32mSystem.out.println("\nExibe próximo a receber atendimento: " + service);[m
+[32m+[m					[32mSystem.out.println("\nFila atualizada: " + fila);[m
+[32m+[m				[32m} else {[m
+[32m+[m					[32mSystem.out.println("\nFila vazia.");[m
+[32m+[m				[32m}[m
+[32m+[m			[32m} else if (option == 0) {[m
+[32m+[m				[32mcontinueQuest = false;[m
+[32m+[m			[32m} else {[m
+[32m+[m				[32mSystem.out.println("\nOpção inválida. Tente novamente.");[m
+[32m+[m			[32m}[m
+[32m+[m
+[32m+[m		[32m}[m
+[32m+[m		[32mLimpatela();[m
+[32m+[m		[32mSystem.out.println("\nFim do programa.");[m
+[32m+[m	[32m}[m
+[32m+[m[32m}[m
+[1mdiff --git a/Modulo11/Atividade02.java b/Modulo11/Atividade02.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..c244164[m
+[1m--- /dev/null[m
+[1m+++ b/Modulo11/Atividade02.java[m
+[36m@@ -0,0 +1,56 @@[m
+[32m+[m[32mpackage Modulo11;[m
+[32m+[m
+[32m+[m[32mimport java.util.Scanner;[m
+[32m+[m[32mimport java.util.Iterator;[m
+[32m+[m[32mimport java.util.Stack;[m
+[32m+[m
+[32m+[m[32mpublic class Atividade02 {[m
+[32m+[m	[32mpublic static void Limpatela() {[m
+[32m+[m		[32mfor (int i = 0; i < 50; i++)[m
+[32m+[m			[32mSystem.out.println();[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32mpublic static void main(String[] args) {[m
+[32m+[m
+[32m+[m		[32mScanner read = new Scanner(System.in);[m
+[32m+[m		[32mStack<String> pilha = new Stack<String>();[m
+[32m+[m		[32mboolean continueQuest = true;[m
+[32m+[m
+[32m+[m		[32mLimpatela();[m
+[32m+[m		[32mSystem.out.println("**************************************************************");[m
+[32m+[m		[32mSystem.out.println("\n1 Adicionar livro" + "\n2 Para ver todos os livros da pilha"[m
+[32m+[m				[32m+ "\n3 Retirar um livro da pilha \r\n" + "\n0 Para finalizar\n");[m
+[32m+[m		[32mSystem.out.println("**************************************************************");[m
+[32m+[m
+[32m+[m		[32mwhile (continueQuest) {[m
+[32m+[m
+[32m+[m			[32mSystem.out.println("Escolha uma opção: ");[m
+[32m+[m			[32mint option = read.nextInt();[m
+[32m+[m			[32mread.nextLine();[m
+[32m+[m
+[32m+[m			[32mLimpatela();[m
+[32m+[m			[32mif (option == 1) {[m
+[32m+[m				[32mSystem.out.println("\nInforme o nome do livro que deseja asicionar: ");[m
+[32m+[m				[32mString aditionalBook = read.nextLine();[m
+[32m+[m				[32mpilha.push(aditionalBook);[m
+[32m+[m				[32mLimpatela();[m
+[32m+[m			[32m} else if (option == 2) {[m
+[32m+[m				[32mif (pilha.isEmpty()) {[m
+[32m+[m					[32mSystem.out.println("\nNão há livros");[m
+[32m+[m				[32m} else {[m
+[32m+[m					[32mSystem.out.println("\nColeção de livros:" + pilha);[m
+[32m+[m				[32m}[m
+[32m+[m			[32m} else if (option == 3) {[m
+[32m+[m				[32mpilha.pop();[m
+[32m+[m				[32mSystem.out.println("\nRetirando o livro do topo: " + pilha );[m
+[32m+[m[41m				[m
+[32m+[m			[32m} else if (option == 0) {[m
+[32m+[m				[32mcontinueQuest = false;[m
+[32m+[m			[32m} else {[m
+[32m+[m				[32mSystem.out.println("\nValor inválido. Tente novamente.");[m
+[32m+[m			[32m}[m
+[32m+[m		[32m}[m
+[32m+[m		[32mLimpatela();[m
+[32m+[m		[32mSystem.out.println("Fim da consulta.");[m
+[32m+[m	[32m}[m
+[32m+[m[32m}[m
+[1mdiff --git a/collection/calculos.java b/collection/calculos.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..722667a[m
+[1m--- /dev/null[m
+[1m+++ b/collection/calculos.java[m
+[36m@@ -0,0 +1,11 @@[m
+[32m+[m[32mpackage collection;[m
+[32m+[m
+[32m+[m[32mpublic class calculos {[m
+[32m+[m	[32mpublic static int sum(int number1, int number2) { //retorna valor[m
+[32m+[m		[32mreturn number1 + number2;[m
+[32m+[m	[32m}[m
+[32m+[m	[32mpublic static void dividir(int number1, int number2) { //metodo void nao retorna valor[m
+[32m+[m		[32mSystem.out.println("Resultado: " + number1 / number2);[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m[32m}[m
+[1mdiff --git a/collection/exemplo2.java b/collection/exemplo2.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..da536a6[m
+[1m--- /dev/null[m
+[1m+++ b/collection/exemplo2.java[m
+[36m@@ -0,0 +1,20 @@[m
+[32m+[m[32mpackage collection;[m
+[32m+[m[32mimport java.util.Scanner;[m
+[32m+[m[32mpublic class exemplo2 {[m
+[32m+[m	[32mpublic static void main(String[]args) {[m
+[32m+[m[41m		[m
+[32m+[m		[32mScanner read = new Scanner(System.in);[m
+[32m+[m[41m		[m
+[32m+[m		[32mSystem.out.println("Informe a idade:");[m
+[32m+[m		[32mString Classing = AgeClassing(read.nextInt());[m
+[32m+[m[41m		[m
+[32m+[m[41m		[m
+[32m+[m	[32m}[m
+[32m+[m	[32mpublic static String AgeClassing(int age) {[m
+[32m+[m		[32mif(age < 13) {[m
+[32m+[m			[32mreturn "treem";[m
+[32m+[m		[32m}else {[m
+[32m+[m			[32mreturn "Adult";[m
+[32m+[m		[32m}[m
+[32m+[m	[32m}[m[41m	[m
+[32m+[m[32m}[m
